@@ -1,6 +1,6 @@
 #### 2.6.1 Biblioteka fmtlib
 
-Biblioteka [fmtlib](02-fmtlib.md) to dobra alternatywa dla operacji wyjścia, stanowiąca inspirację dla `std::format` i `std::print`. Jeżeli Twój kompilator nie obsługuje którejś z tych funkcji biblioteki standardowej, nic nie stoi na przeszkodzie, by używać właśnie  fmtlib. Jest to tym prostsze, że zawiera ona wzorcową implementację funkcji `format` i `print`. 
+Biblioteka [fmtlib](02-fmtlib.md) to dobra alternatywa dla operacji wyjścia, stanowiąca inspirację dla `std::format` i `std::print`. Jeżeli Twój kompilator nie obsługuje którejś z tych funkcji biblioteki standardowej, nic nie stoi na przeszkodzie, by używać właśnie  `fmtlib`. Jest to tym prostsze, że zawiera ona wzorcową implementację funkcji `format` i `print`. 
 
 Rozpatrzmy prosty przykład (stąd można pobrać [projekt](./cpp/w02/fmtlib/)):
 
@@ -20,7 +20,7 @@ int main()
 ```
 
 - Domyślnie biblioteka przechowuje swój interfejs w pliku `<fmt/format.h>`, który należy włączyć do programu makropoleceniem `#include`.
-  - Uwaga: jego dokładna lokalizacja zależy od instalacji biblioteki.  
+  - Uwaga: jego dokładna lokalizacja zależy od sposobu instalacji biblioteki.  
 -   Zamiast przestrzeni nazw `std` używamy przestrzeni nazw `fmt`. Stąd wyrażenia w rodzaju
   - `fmt::fotmat`
   - `fmt::print` 
@@ -45,9 +45,9 @@ target_link_libraries(fmtlib-demo PUBLIC fmt)
 
 - Zupełnie wystarcza język C++ w standardzie C++11. Oczywiście użycie nowszego standardu też jest możliwe.  
 - Musimy dodać instrukcję `target_link_libaries` łączącą nasz program z biblioteką `fmtlib`. W najprostszej konfiguracji posiada ona 3 argumenty (oddzielone spacjami a nie np. przecinkami!) 
-  - Argument 1: nazwa programu. Tu: `fmtlib-demo`.
+  - Argument 1: nazwa programu wynikowego. Tu: `fmtlib-demo`. W systemach WIndows może mu odpowiadać plik o nazwie `fmtlib-demo.exe`. 
   - Argument 2: słowo `PUBLIC` lub `PRIVATE`. W małych programach oba warianty będą działały tak samo. 
-  - Argument 3: nazwa biblioteki. Tu: `fmt`.
+  - Argument 3: nazwa dołączanej biblioteki. Tu: `fmt`.
 
 #### 2.6.1.2 Kompilacja "z ręki"
 
@@ -91,13 +91,19 @@ int main()
 
 - W ten sposób można uprościć użycie każdej funkcji zdefiniowanej w dowolnej przestrzeni nazw. 
 
-- Istnieje też metoda hurtowego importu wszystkich nazw z przestrzeni nazw:
+- Istnieje też metoda hurtowego importu wszystkich nazw z przestrzeni nazw, czyli deklaracja `using namespace`:
 
   ```c++
   using namespace std;
   ```
 
-  jednak jest ona uważana za niezbyt profesjonalną.
+  Odpowiednia komenda importująca do globalnej przestrzeni nazw wszystkie nazwy z biblioteki `fmt` to oczywiście
+  
+  ```c++   
+  using namespace fmt;
+  ```
+  
+  Takie włączanie całych bibliotek uważane jest za niezbyt profesjonalne, gdyż może prowadzić do nieporozumień czy wręcz błędów. Na przykład  
 
 
 

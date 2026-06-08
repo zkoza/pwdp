@@ -41,7 +41,7 @@ W powyższym kodzie widzimy m.in. następujące cechy języka C++:
 - Każda instrukcja kończy się średnikiem.
 - Liczby reprezentowane w typie `int` mogą być zarówno dodatnie, jak i ujemne. 
 - Wartości zmiennych typu `int` są ograniczone z dołu i z góry. 
-  - Wartości minimalne i maksymalne typów wbudowanych (czyli zdefiniowane bezpośrednio w definicji języka) można uzyskać z wartości wyrażeń `std::numeric_limits<T>::min()` oraz `std::numeric_limits<T>::max()` , gdzie zamiast `T` należy wpisać nazwę tego typu. 
+  - Wartości minimalne i maksymalne typów wbudowanych (czyli zdefiniowane bezpośrednio w specyfikacji języka) można uzyskać z wartości wyrażeń `std::numeric_limits<T>::min()` oraz `std::numeric_limits<T>::max()` , gdzie zamiast `T` należy wpisać nazwę tego typu. 
   - Wyrażenia te zdefiniowano w pliku `limits`, stąd na początku programu instrukcja `#include <limits>`.
 - Liczby reprezentowane  w typie `int` mają strukturę pierścienia: po zwiększeniu największej z nich o `1`, otrzymuje się liczbę najmniejszą. Podobnie, po dojęciu 1 od najmniejszej dostaje się liczbę największą. 
 - Suma dwóch dodatnich liczb typu `int` może być ujemna. 
@@ -80,7 +80,7 @@ Jak widać, literały znakowe zapisujemy w apostrofach, np. `'a'`, `'x'`, `'!'`.
 char c = 'Ą'; // błąd! Ą nie jest elementem zbioru znaków ASCII
 ```
 
-Istnieją znaki specjalne, których nie da się zapisać jako tzw. glifu, czyli znaku drukarskiego widocznego na ekranie monitora czy wydruku. Są to m.in. wszystkie znaki sterujące (używane niegdyś np. do sterowania pracy drukarek wierszowych). Zapisuje się je za pomocą specjalnej notacji dwuznakowej, w której pierwszym znakiem jest ukośnik. Najbardziej znanym znakiem specjalnym jest znak przejścia do nowej linii, `'\n'`. Inne nieoczywiste dwuznaki reprezentujące jeden znak to m.in. `\\`, `\'` i `"`. 
+Istnieją znaki specjalne, których nie da się zapisać jako tzw. glifu, czyli znaku drukarskiego widocznego na ekranie monitora czy wydruku. Są to m.in. wszystkie znaki sterujące (używane niegdyś np. do sterowania pracy drukarek wierszowych). Zapisuje się je za pomocą specjalnej notacji dwuznakowej, w której pierwszym znakiem jest ukośnik. Najbardziej znanym znakiem specjalnym jest znak przejścia do nowej linii, `'\n'`. Inne nieoczywiste dwuznaki reprezentujące jeden znak to m.in. `\\`, `\'` i `\"`. 
 
 ##### 2.2.3.2 `const char[N]`
 
@@ -90,7 +90,7 @@ Zwykle interesują nas nie pojedyncze litery, a cały łańcuchy liter, czyli te
 auto s = "Napis może zawierać polskie litery i nie tylko, בוקר טוב"
 ```
 
-Literały napisowe przechowywane są w tablicach znaków. Na przykład typem wyrażenia `"Ala"` jest `const char[4]`. Modyfikator `const` informuje, że taki literał jest niemodyfikowalny. Z kolei `4` w nawiasach kwadratowych oznacza, że napis `"Ala"` przechowywany jest w tablicy 4 znaków. Dlaczego 4, skoro litery w napisie są tylko 3? Otóż kompilator zawsze na końcu literału napisowego dodaje specjalny znak, pełniący rolę znacznika tegoż napisu. Znak ten ma wartość `0` i może być zapisany jako `\0`.  
+Literały napisowe przechowywane są w tablicach znaków. Na przykład typem wyrażenia `"Ala"` jest `const char[4]`. Modyfikator `const` informuje, że taki literał jest niemodyfikowalny. Z kolei `4` w nawiasach kwadratowych oznacza, że napis `"Ala"` przechowywany jest w tablicy 4 znaków. Dlaczego 4, skoro litery w napisie są tylko 3? Otóż kompilator zawsze na końcu literału napisowego dodaje specjalny znak, pełniący rolę znacznika końca tegoż napisu (zwanego też wartownikiem napisu). Znak ten ma wartość `0` i może być zapisany jako `\0`.  
 
 ##### 2.2.3.3 `std::string`  
 
@@ -111,7 +111,8 @@ int main()
 - typ `std::string` zaimplementowano w pliku `string` biblioteki standardowej - 
   por. `#include <string>`.
 - `operator::` oddziela nawę typu (np. `string`) lub obiektu (np. `cout`) od nazwy przestrzeni nazw, w której ten typ lub obiekt został zdefiniowany.
-- Wszystkie elementy biblioteki standardowej znajdują się w przestrzeni nazw `std` (z kilkoma wyjątkami przejętymi z języka C, w którym przestrzeni nazw nie ma).
+  - Wszystkie elementy biblioteki standardowej znajdują się w przestrzeni nazw `std` (z kilkoma wyjątkami przejętymi z języka C, w którym przestrzeni nazw nie ma).
+
 - Typ `std::string` jest wygodniejszy w użyciu od `char[N]`, gdyż zaimplementowano w nim bardzo wiele użytecznych funkcji. Można dzięki nim łatwo łączyć ze sobą obiekty tego typu w większy napis (tu: w wyrażeniu `s + " ma kota."` ), wyszukiwać podciągi (od przodu lub od tyłu), usuwać podciągi, porównywać z innymi napisami itp. Obiekty tego typu przechowują też informację o rozmiarze przechowywanego w nich tekstu, co jest bardzo wygodne (tu: `s.length()`). 
 
 Nie jest moją intencją opisywać tu w sposób kompletny klasę `std::string`. Dokumentacja oficjalna, zapisana dość suchym językiem, znajduje się w serwisie [cpprefernce](https://en.cppreference.com/w/cpp/string/basic_string).  
@@ -126,7 +127,7 @@ Przykład:
 bool dodatni = x > 0;
 ```
 
-Wyrażenia typu `bool` można konwertować z liczb i na liczby. W wyrażeniu arytmetycznym `true` konwertowane jest do `1`, a `false` do `0`. Dlatego `1 + true` to `2` (ale praktycznie nikt tej konwersji nie używa). Z kolei jeżeli należy dokonać konwersji wyrażenia arytmetycznego na logiczne, czyli np. z typu `int` do typu `bool`, to `0` konwertowane jest na `false`, a wszystkie inne wartości na `true`. Dlatego w instrukcji (nico dziwacznej) `bool b = 7`, `b` zostanie zainicjalizowane na `true`.      
+Wyrażenia typu `bool` można konwertować z liczb i na liczby. W wyrażeniu arytmetycznym `true` konwertowane jest do `1`, a `false` do `0`. Dlatego `1 + true` to `2` (ale praktycznie mało kto tej konwersji używa). Z kolei jeżeli należy dokonać konwersji wyrażenia arytmetycznego na logiczne, czyli np. z typu `int` do typu `bool`, to `0` konwertowane jest na `false`, a wszystkie inne wartości na `true`. Dlatego w instrukcji (nico dziwacznej) `bool b = 7`,  zmienna`b` zostanie zainicjalizowana na `true`.     
 
 #### 2.2.5 Inne typy podstawowe
 
@@ -199,6 +200,17 @@ Literały całkowitoliczbowe można zapisywać w różnych systemach liczbowych 
 | `0`         | ósemkowy              | 0,1,2,3,4,5,6,7                 | `032`     | 26      |
 | `0b`        | dwójkowy              | 0,1                             | `0b11010` | 26      |
 
+W przypadku systemu szesnastkowemu cyfrom `a` ,`b`, ..., `f` odpowiadają odpowiednio liczby `10`, `11`,...,`15`. Zamiast liter małych też można używać liter dużych, mających takie samo znaczenie (np. wyrażenia  `0xa` oraz `0XA` mają tę samą wartość `10`).     
+
+| Cyfra szesnastkowa | Wartość |
+| ------------------ | ------- |
+| `a` lub `A`        | 10      |
+| `b` lub `B`        | 11      |
+| `c` lub `C`        | 12      |
+| `d` lub `D`        | 13      |
+| `e` lub `E`        | 14      |
+| `f` lub `F`        | 15      |
+
 Przykład:
 
 ```c++
@@ -231,7 +243,7 @@ auto x = 3.14  // x jest typu double
 auto y = 1e-4; // y jest typu double i ma wartość 0.0001 (notacja inżynierska)
 ```
 
-Osobnym problemem są literały znakowe i napisowe. Jak wiemy, znak `\` ma tu szczególne znaczenie i jest to tzw. *escape character*: znak. który sam nie jest interpretowany jako znak, lecz przełącznik trybu znaków specjalnych. To znak lub znaki stojące za nim niosą informację o tym, o jaki znak chodzi. Np. `\n` to znany już znak przejścia do kolejnego wiersza, a np. `\"` to po prostu znak cudzysłowu. Znaki można też zapisywać w postaci ósemkowej i szesnastkowej. Na przykład skoro wartością ASCII znaku `'A'` jest 65, czyli szesnastkowo `'41'` (bo 65 = 4*16 + 1), to możemy tę literę zapisać także jako `\x41`. Czyli jako przedrostek stosujemy `'\x'`, a po nim wpisujemy kod ASCII w notacji szesnastkowej. Dlatego tajemnicza instrukcja
+Osobnym problemem są literały znakowe i napisowe. Jak wiemy, znak `\` ma tu szczególne znaczenie i jest to tzw. *escape character*: znak. który sam nie jest interpretowany jako znak, lecz jako przełącznik trybu znaków specjalnych. To znak lub znaki stojące za nim niosą informację o tym, o jaki znak chodzi. Np. `\n` to znany już znak przejścia do kolejnego wiersza, a np. `\"` to po prostu znak cudzysłowu. Znaki można też zapisywać w postaci ósemkowej i szesnastkowej. Na przykład skoro wartością ASCII znaku `'A'` jest 65, czyli szesnastkowo `'41'` (bo 65 = 4*16 + 1), to możemy tę literę zapisać także jako `\x41`. Czyli jako przedrostek stosujemy `'\x'`, a po nim wpisujemy kod ASCII w notacji szesnastkowej. Dlatego tajemnicza instrukcja
 
 ```c++   
 std::cout << "\x41\x42\x43\n";
@@ -251,7 +263,7 @@ ABC
 
 #### 2.2.7 Konwersje i promocje w wyrażeniach
 
-Jeżeli w wyrażeniu arytmetycznym (np. dodawaniu) któryś z argumentów jest "mniejszy" niż `int`, tzn. jeżeli zapisywany jest na mniejszej liczbie bitów, to zostanie poddany automatycznej promocji do typu `int`. Jest to źródłem ciekawych błędów. Np. jaki jest typ wyrażenia `'A' + 1`? Wielu początkujących adeptów C++ myśli, że `char`, a wartością jest `'B'`. Tymczasem typ pierwszego argumentu dodawania jest najpierw promowany z `char`  do `int`, w wyniku czego po lewej stronie plusa pojawia się liczba 65, będąca [kodem ASCII](https://pl.wikipedia.org/wiki/ASCII) znaku `'A'`.  Wynikiem dodawania `65 + 1` jest oczywiście `66`. Dlatego instrukcja
+Jeżeli w *wyrażeniu arytmetycznym* (np. dodawaniu) któryś z argumentów jest "mniejszy" niż `int`, tzn. jeżeli zapisywany jest na mniejszej liczbie bitów, to zostanie poddany automatycznej promocji do typu `int`. Jest to źródłem ciekawych błędów. Np. jaki jest typ wyrażenia `'A' + 1`? Wielu początkujących adeptów C++ myśli, że `char`, a wartością jest `'B'`. Tymczasem typ pierwszego argumentu dodawania jest najpierw promowany z `char`  do `int`, w wyniku czego po lewej stronie plusa pojawia się liczba 65, będąca [kodem ASCII](https://pl.wikipedia.org/wiki/ASCII) znaku `'A'`.  Wynikiem dodawania `65 + 1` jest oczywiście `66`. Dlatego instrukcja
 
 ```c++
 std::cout << 'A' + 1 << "\n"; 
@@ -275,7 +287,9 @@ który w moim komputerze wygląda następująco:
 �
 ```
 
-Otóż typem wartość wyrażenia `numeric_limits<T>::max()` jest `T`, czyli w powyższym przypadku jest to `unsigned char`. Obiekt `std::cout` wyświetla wyrażenia typu `unsigned char` jako znaki a nie liczby. Niestety, znaki o wartości 255 nie mieszczą się w tabeli ASCII, która standaryzuje jedynie znaki o wartościach od 0 do 127. Interpreter mojego terminala interpretuje więc znak o wartości 255 (bitowo: `0b11111111`) jako początek litery zapisanej w systemie kodowania [UTF-8](https://pl.wikipedia.org/wiki/UTF-8). Problem w tym, że żadna litera z tego zestawu nie może zacząć się od takiej kombinacji bitów. Czyli błąd. Znak � występuje w zestawie [znaków specjalnych standardu UNICODE](https://en.wikipedia.org/wiki/Specials_(Unicode_block)) , gdzie definiowany jest jako *REPLACEMENT CHARACTER used to replace an unknown, unrecognised, or unrepresentable character* (znak zastępczy wykorzystywany jako zamiennik znaku nieznanego, nierozpoznanego lub niemającego swojej reprezentacji). Jeżeli chcemy ujrzeć znak jako liczbę, musimy skonwertować ją do typu liczbowego. Np. tak:
+Otóż typem wartość wyrażenia `numeric_limits<T>::max()` jest `T`, czyli w powyższym przypadku jest to `unsigned char`. Obiekt `std::cout` wyświetla wyrażenia typu `unsigned char` jako znaki a nie liczby. Niestety, znak o wartości 255 nie mieści się w tabeli ASCII, która standaryzuje jedynie znaki o wartościach od 0 do 127. Interpreter mojego terminala interpretuje więc znak o wartości 255 (bitowo: `0b11111111`) jako początek litery zapisanej w systemie kodowania [UTF-8](https://pl.wikipedia.org/wiki/UTF-8). Problem w tym, że żadna litera z tego zestawu nie może zacząć się od takiej kombinacji bitów. Czyli błąd. Znak � występuje w zestawie [znaków specjalnych standardu UNICODE](https://en.wikipedia.org/wiki/Specials_(Unicode_block)), gdzie definiowany jest jako *REPLACEMENT CHARACTER used to replace an unknown, unrecognised, or unrepresentable character* (znak zastępczy wykorzystywany jako zamiennik znaku nieznanego, nierozpoznanego lub niemającego swojej reprezentacji). 
+
+Jeżeli chcemy ujrzeć znak jako liczbę, musimy skonwertować ją do typu liczbowego. Np. tak:
 
 ```c++
 int mx = std::numeric_limits<unsigned char>::max();
@@ -303,4 +317,4 @@ auto l = int{'a'};
 
 Każda z powyższych instrukcji konwertuje wyrażenie typu `char` (tu: `'a'`) na wyrażenie typu `int`. Każda ze zmiennych `i`, `j`, `k`, `l` jest więc typu `int` i ma wartość kodu ASCII znaku `a`, czyli 97.
 
-W programach profesjonalnych używa się wyłącznie pierwszej notacji. W programach pisanych "dla siebie" częściej widuje się bardziej zwięzłe notacje 2., 3. i, chyba nieco rzadziej, 4.  
+W programach profesjonalnych używa się wyłącznie pierwszej notacji. W programach pisanych "dla siebie" częściej widuje się bardziej zwięzłe notacje 2., 3. i, chyba nieco rzadziej, 4.

@@ -12,7 +12,7 @@
      std::cout << suma(a, 0) << "\n";   // 0 
      ```
 
-   - Zaimplementuj i przetestuj funkcję `int print(int tab[], int size)`. Jej pierwszym argumentem jest tablica liczb typu `int`, a drugim - jej rozmiar. Funkcja powinna wypisywać na konsoli  `size` pierwszych liczb z tablicy. 
+   - Zaimplementuj i przetestuj funkcję `void print(int tab[], int size)`. Jej pierwszym argumentem jest tablica liczb typu `int`, a drugim - jej rozmiar. Funkcja powinna wypisywać na konsoli  `size` pierwszych liczb z tablicy. 
 
    - Zaimplementuj i przetestuj funkcję `void inverse(int tab[], int size)`. Jej pierwszym argumentem jest tablica liczb typu `int`, a drugim - jej rozmiar. Funkcja powinna odwracać kolejność  `size` pierwszych liczb w tablicy. Np. dla tablicy 
 

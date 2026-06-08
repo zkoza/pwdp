@@ -92,7 +92,7 @@ class Modulo
     T value;
   public:
     explicit Modulo(T n)
-        : value{n }
+        : value{n}
     {
         if (n >= N || n < 0)
         {

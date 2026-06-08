@@ -4,7 +4,7 @@ Skoro typowe programy w C++ składają się z kilku, kilkunastu a nawet kilku ty
 
 #### 2.3.1 Zakres
 
-Zakres to obszar kodu ograniczony klamrami ({}). 
+Zakres (ang. *scope*) to obszar kodu ograniczony klamrami ({}). 
 
 Zmienne (i obiekty) dzielimy na globalne i lokalne ze względu na to, czy należą, czy nie należą do jakiegoś zakresu. 
 
@@ -40,7 +40,7 @@ Zmienna (i obiekty) lokalne to wszystkie zmienne, które nie są globalne. W prz
 
 ##### 2.3.1.3 Czas życia zmiennej
 
-Zmienna "żyje" od punktu jej definicji do końca zakresu, w której została zdefiniowana. Zmienne (i obiekty) globalne są tworzone  i inicjalizowane przed uruchomieniem funkcji `main` i "żyją" co najmniej tak długo, jak długo nie zakończyło się działanie tej funkcji (czyli w praktyce - do końca programu). 
+Zmienna "żyje" od punktu jej definicji do końca zakresu, w którym została zdefiniowana. Zmienne (i obiekty) globalne są tworzone  i inicjalizowane przed uruchomieniem funkcji `main` i "żyją" co najmniej tak długo, jak długo nie zakończy się działanie tej funkcji (czyli w praktyce - do końca programu). 
 
 ##### 2.3.1.4 Operator pobrania adresu (&)
 
@@ -116,11 +116,11 @@ To dość dziwny program, w którym wszystkie zmienne mają tę samą nazwę, `x
 
 ###### 2.3.1.4.1 Przesłanianie
 
-Zjawisko, w którym w nowym zakresie wprowadzamy zmienną o takiej samej nazwie jak zmienna zdefiniowana w zakresie nadrzędnym nazywamy ***przesłanianiem***. 
+Przedstawione powyżej zjawisko polegające na tym, że w nowym zakresie wprowadzamy zmienną o takiej samej nazwie jak zmienna zdefiniowana w zakresie nadrzędnym, nazywamy ***przesłanianiem***. 
 
 ###### 2.3.1.4.2 Operator zakresu
 
-Zmiennej przesłoniętej nie możemy odsłonić - z jednym wyjątkiem. Za pomocą operatora `::` możemy uzyskać dostep do przesłoniętej zmiennej globalnej. Por. instrukcję `return ::x + x;`.  Pierwsza z użytych tu zmiennych `x` to zmienna globalna (o wartości 1), a druga - lokalna (o wartości 2). 
+Zmiennej przesłoniętej nie możemy odsłonić - z jednym wyjątkiem. Za pomocą operatora `::` możemy uzyskać dostęp do przesłoniętej zmiennej globalnej. Por. instrukcję `return ::x + x;`.  Pierwsza z użytych tu zmiennych `x` to zmienna globalna (o wartości 1), a druga - lokalna (o wartości 2). 
 
 ###### 2.3.1.4.3 Przesłanianie a zakresy
 
@@ -147,11 +147,11 @@ int main()
 }
 ```
 
-- W powyższym programie zdefiniowano dwie przestrzenie nazw (ang. *namespace*): `X` i `Y`.
+- W powyższym programie zdefiniowano dwie przestrzenie nazw (ang. *namespaces*): `X` i `Y`.
 
 - Dostęp do zdefiniowanych w nich zmiennych globalnych możliwy jest poprzez operator zakresu, `::`, przed którym wpisujemy przestrzeń nazw, z której chcemy wybrać daną zmienną. Por. instrukcja stanowiąca treść funkcji `main`:
   ``` c++
   std::cout << X::x + Y::x << "\n";
   ```
 
-W praktyce jeszcze długo nie będziesz tworzyć własnych przestrzeni nazw ani używać bibliotek z tej cechy języka C++ korzystających. Niemniej, rozumiesz już mniej więcej, skąd się bierze i co oznacza `std::` zapisywane przy funkcjach, zmiennych i obiektach biblioteki standardowej C++. 
+W praktyce jeszcze długo nie będziesz tworzyć własnych przestrzeni nazw ani używać bibliotek z tej cechy języka C++ korzystających. Niemniej, rozumiesz już mniej więcej, skąd się bierze i co oznacza `std::` zapisywane przy funkcjach, zmiennych i obiektach biblioteki standardowej C++.

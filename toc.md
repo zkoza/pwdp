@@ -75,31 +75,37 @@
 - [Debugowanie programów z funkcjami rekurencyjnymi](./07-debugowanie-rekurencji.md)
 - [Lista zadań nr 7](./listy/lista7.md)
 
-### 8. Struktury, klasy i obiekty
+### 8. Struktury, klasy i obiekty (1)
 
 - [Struktura](08-struktury.md)
 - [Klasa jako rozszerzenie struktury](08-klasy.md)
   - [sekcje prywatne i publiczne](08-private-public.md)
-  - [funkcje składowe](08-funkcje-sklado)
-  - konstruktory, destruktor
-  - dziedziczenie (elementy)
-  - klasy a struktury w C++
-- Obiekt
+  - [funkcje składowe](08-funkcje-skladowe.md)
+  - [konstruktory](./08-konstruktory-destruktor.md)
+  - [destruktor](08-destruktor.md)
 - [Lista zadań nr 8](./listy/lista8.md)
 
-### 9. Szablony i wyjątki
+### 9. Struktury, klasy i obiekty (2)
 
-- Dlaczego typ danych przechowywanych w `std::vector` zapisywany jest w nawiasach ostrokątnych?
-- [Prosty przykład szablonu](./09-prosty-szablon.md)
+- Klasy 
+  - dziedziczenie (elementy)
+  - funkcje wirtualne
+  - klasy a struktury w C++
+- Obiekt
+
+### 10. Szablony i wyjątki
+
+- [Dlaczego typ danych przechowywanych w `std::vector` zapisywany jest w nawiasach ostrokątnych?](09-szablony.md)
+- [Przykłady szablonów](./09-prosty-szablon.md)
 - Co robić, gdy jakiś fragment programu zgłosi wyjątek? 
 - [Lista zadań nr 9](./listy/lista9.md)
 
-### 10. Elementy biblioteki standardowej C++ (STL) 
+### 11. Elementy biblioteki standardowej C++ (STL) 
 
 - Kontenery
 - Algorytmy 
 
-### 11. Biblioteki: SFML
+### 12. Biblioteki: SFML
 
 - [Krótkie wprowadzenie do SFML](./11-SFML-intro.md)
 - [Prosty program w SFML](./11-SFML-pierwszy.md)
@@ -111,13 +117,9 @@
   
 - [Lista zadań nr 11](listy/lista11.md) 
 
-### 12. Biblioteki: SFML (2)
+### 13. Biblioteki: SFML (2)
 
-### 13. Biblioteki: Qt
-
-### 14. Biblioteki: Qt (2)
-
-### 15. Przykład programu: fraktal Mandelbrota
+### 14. Przykład programu: fraktal Mandelbrota
 
 ### Zagadnienia egzaminacyjne 
 

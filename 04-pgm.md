@@ -274,7 +274,7 @@ Oczywiście można pójść dalej, Na przykład jeżeli zamiast $x^2 + y^2$ weź
 
 ![](./img/04/moj_obrazek_pierscienie2.png)
 
-Pierścienie teraz są równe, choć widać też, że wybór `std::round` podczas konwersji do liczb całkowitych nie był chyba najszczęśliwszym rozwiązaniem. 
+Pierścienie teraz są równej szerokości, choć widać też, że wybór `std::round` podczas konwersji do liczb całkowitych nie był chyba najszczęśliwszym rozwiązaniem. 
 
 Jeżeli dodatkowo powiększymy skalę odcieni szarości do 256, to otrzymamy typowy gradient kołowy:
 
@@ -315,7 +315,7 @@ Efekt:
 
 Projekt z całym programem można pobrać [stąd](./cpp/w04/pgm) (target: `pgm1`).
 
-Jeżeli się dobrze przyjrzeć, to na powyższym obrazku łatwo dostrzeżemy "pikselozę": krawędzie kółka nie są gładkie. Można temu zaradzić, interpolując w okolicach krawędzi kółka kolor między czarnym a kolorem tła. Zastosowanej przez mnie metody nie będę omawiał, zwłaszcza że to rozwiązanie amatorskie. Kod znajduje się w tym samym projekcie jaki target: `pgm2`. Efekt: 
+Jeżeli się dobrze przyjrzeć, to na powyższym obrazku łatwo dostrzeżemy "pikselozę": krawędzie kółka nie są gładkie. Można temu zaradzić, interpolując w okolicach krawędzi kółka kolor między czarnym a kolorem tła. Zastosowanej przez mnie metody nie będę omawiał, zwłaszcza że to rozwiązanie amatorskie. Kod znajduje się w tym samym projekcie jako target `pgm2`. Efekt: 
 
 ![](/home/zkoza/Pulpit/Dydaktyka/aaa_pwdp/github/pwdp/img/04/moj_obrazek_2.png)
 

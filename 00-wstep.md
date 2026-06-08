@@ -8,7 +8,7 @@ Niniejsze repozytorium zawiera materiały pomocnicze do zajęć *Praktyczny wst�
 
 Języka C++ uczymy się mniej więcej tak, jak języka angielskiego lub gry na fortepianie. Uczymy się  trochę i staramy się to "trochę" stosować w swoich programach / grze na fortepianie. A potem więcej i więcej, tyle, ile będzie nam potrzebne i tyle, ile jesteśmy w stanie. Żeby dobrze grać na fortepianie, trzeba naprawdę dużo na nim grać. Podobnie, nie nauczymy się programować z książek, instrukcji użytkownika, bryków czy blogów. Jednak tak jak zajęcia z teorii muzyki pomagają pianiście zrozumieć strukturę granych przez siebie utworów muzycznych, tak lektura podręczników czy choćby przedstawionych tu materiałów pomaga uporządkować swoją wiedzę i po prostu lepiej i szybciej programować.
 
-Językiem angielskim można się posługiwać, znając tylko kilka tysięcy słów i kilka podstawowych "prawd gramatycznych". Z programowaniem jest tak samo. Jeśli po ok. roku nauki czegoś jeszcze o programowaniu się nie wie, to znaczy, że pewnie dotąd nie było to potrzebne, czyli strata żadna. Ja staram się tu poruszać tematy naprawdę ważne i mające mające możliwie szerokie zastosowanie niezależnie od używanego języka. 
+Językiem angielskim można się posługiwać, znając tylko kilka tysięcy słów i kilka podstawowych "prawd gramatycznych". Z programowaniem jest tak samo. Jeśli po ok. roku nauki czegoś jeszcze o programowaniu się nie wie, to znaczy, że pewnie dotąd nie było to potrzebne, czyli strata niewielka. Ja staram się tu poruszać tematy naprawdę ważne i mające mające możliwie szerokie zastosowanie niezależnie od używanego języka. 
 
 W niniejszym kursie używam języka C++.  Oczywiście w wersji uproszczonej, czyli jego podzbioru  dostosowanego do możliwości początkujących programistów. 
 
@@ -54,7 +54,7 @@ Wątpię, czy istnieje pytanie związane z programowaniem na podstawowym lub śr
 Kanały na YouTube:
 
 - [Cherno](https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb) - w tej chwili 101 krótkich filmów, widziałem kilka, autor wie, o czym mówi
-- Niestety, nie polecam kursu Mirosława Zelenta, co nie znaczy, że na początku nie ma sensu z niego korzystać. Co nie ma sensu to udawanie, że na ten kurs nie natrafisz. Trafisz, bo jest tego bardzo dużo i jest to po polsku. Jeśli uważasz, że to kurs dla ciebie, to OK.
+- Niestety, nie polecam [kursu Mirosława Zelenta](https://www.youtube.com/channel/UCzn6vAfspIcagLax1fck_jw), co nie znaczy, że na początku nie ma sensu z niego korzystać. Co nie ma sensu to udawanie, że na ten kurs nie natrafisz. Trafisz, bo jest tego bardzo dużo i jest to po polsku. Jeśli uważasz, że to kurs dla ciebie, to OK. Nie mam zaufania do ekspertów od wszystkiego, wiele "prawd" przedstawionych w tamtych kursie jest powierzchownych, nieprecyzyjnych. Dla osób początkujących to może jednak nie mieć znaczenia. Wasz wybór.  
 
 Inne materiały:
 
@@ -70,4 +70,10 @@ Bieżący "kurs" **nie jest** pełnym kursem C++. To raczej zwięzły materiał 
 
 ### Egzamin
 
-Kiedyś był pisemny, ale odkąd zauważyłem, że wielu studentów ma kłopoty z jasnym wysławianiem się pisemnym, jest ustny. Zwykle trwa 2 dni.
+Kiedyś był pisemny, ale odkąd zauważyłem, że wielu studentów ma kłopoty z jasnym wysławianiem się pisemnym, jest ustny. Zwykle trwa 2 dni (w sensie: studenci dzielni są na 2 grupy).
+
+#### Sztuczny
+
+W 2026 r. nie można udawać, że Sztuczny (AI) nie potrafi generować użytecznego kodu w dowolnym języku programowania. Sam, pisząc skrypty w `bash`-u, którego znam tylko podstawy, pomagam sobie zapytaniami do sztucznego. Zwykle jego odpowiedzi są poprawne, czasami odpisuje nie na temat i muszę przeprosić się z wujkiem Googlem, czasami porady Sztucznego są po prostu błędne. 
+
+Istnieją komercyjne wersje Sztucznego dostosowane do generowania kodu. Wg ich twórców, platformy te wkrótce wyeliminują z rynku większość programistów "białkowych". Pożyjemy, zobaczymy. Póki co, ten kod generowany jest na podstawie danych treningowych zaczerpniętych z internetu, w tym publicznych repozytoriów oprogramowania, jak GitHub czy SourceForge. Wklejanie kodu wygenerowanego przez Sztucznego w wielu przypadkach równoważne jest więc z plagiatem. I to jest moje stanowisko odnośnie korzystania ze Sztucznego na tych zajęciach. Można go prosić o wytłumaczenie jakichś aspektów programowania - wtedy streści nam zawartość kilku stron internetowych tak, jakby sam był ich autorem. 

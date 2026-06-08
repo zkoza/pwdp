@@ -2,7 +2,7 @@
 
 1. (1 pkt.) Napisz program, który będzie generował plik w formacie PGM (tryb ASCII, czyli *plain PGM*) przedstawiający szachownicę o rozmiarze 800 na 800 pikseli z jasnymi i ciemnymi polami o rozmiarze 100 na 100 pikseli. Pole w lewym górnym rogu powinno być jasne.
 
-2. (2 pkt) Napisz program, który będzie wczytywał plik w formacie PGM (ASCII) i automatycznie zamieniał go na tzw. *[ASCII art](https://en.wikipedia.org/wiki/ASCII_art)* stosując metodę, w której przestrzeń kolorów obrazu najpierw konwertuje się do odcieni szarości (ang. *grayscale*), a następnie różnym odcieniom przypisuje się inne znaki (litery, cyfry itp.). Proponuję na początek zastosować tablicę (napis):
+2. (2 pkt) Napisz program, który będzie wczytywał plik w formacie PGM (ASCII) i automatycznie zamieniał go na tzw. *[ASCII art](https://en.wikipedia.org/wiki/ASCII_art)* stosując metodę, w której przestrzeń kolorów obrazu najpierw konwertuje się do odcieni szarości (ang. *grayscale*), a następnie różnym odcieniom przypisuje się odpowiednie znaki (litery, cyfry itp.). Proponuję na początek zastosować tablicę (napis):
 
    ```c++        
    " ..,:;!=oxO#%@";

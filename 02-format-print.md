@@ -225,7 +225,7 @@ Projekt można pobrać [z tej linki](./cpp/w02/format/).
 
   - koniecznie należy zauważyć, że wyświetlany adres zmiennej `s`, czyli `&s`, został poprzedzony operatorem rzutowania do nieomawianego jeszcze typu `void*`. Jest to jedyny typ wskaźnikowy obsługiwany przez `std::format`. Póki nie poznasz bliżej wskaźników, możesz `(void*)` traktować jak magiczne zaklęcie.
 
-- Możemy też dokładnie kontrolować sposób wyświetlania daty i czasu (por. przykład powyżej).
+- Możemy też dokładnie kontrolować sposób wyświetlania daty i czasu (por. przykład poniżej).
 
 - i wiele innych...
 
@@ -267,7 +267,7 @@ std::println("|{:<10}|{:^10}|{:>10}|", "lewa", "środek", "prawa");
   - lub w inny sposób przekaż odpowiednią flagą do kompilatora. Dla gcc i clang ta flaga to 
     `-std=c++23`.  
 
-- Funkcja `std::print` wymaga włączenia do programu pliku nagłówkowego `print`:
+- Funkcje `std::print` i `std::println`wymagają włączenia do tekstu programu pliku nagłówkowego `print`:
 
   ```c++
   #include<print>

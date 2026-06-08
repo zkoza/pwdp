@@ -151,7 +151,7 @@ Być może powinienem w tym miejscu omówić plik `Makefile` wygenerowany przez 
 
 Z biegiem czasu programiści zauważyli, że ten sam kod wykorzystywany jest w wielu niezwiązanych ze sobą kontekstach. Zwykle nie ma większego sensu, by kompilował go użytkownik. Dlatego opracowano sposób, by łączyć pliki obiektowe (= skompilowane pliki źródłowe) w biblioteki. Każda biblioteka dystrybuowana jest w postaci pliku lub plików binarnych z rozszerzeniem `.so` lub `.a` (Linux), lub `.dll` lub `lib` (Windows) oraz zestawu plików nagłówkowych, zwykle z rozszerzeniem `.h` lub `hpp`.
 
-Za przykład nich posłuży biblioteka lz4, opisywana jako "". W mojej dystrybucji dostarczana jest w następującym zestawie:
+Za przykład nich posłuży biblioteka `lz4`, służąca do kompresji i dekompresji plików. W mojej dystrybucji dostarczana jest w następującym zestawie:
 
 ```txt
 /usr/bin/lz4
