@@ -9,7 +9,7 @@ Obsługa plików w zasadzie niewiele różni się od obsługi standardowego wej�
 - po otwarciu mieć do niego dostęp i odczytywać z niego lub zapisywać w nim określone dane
 - zamknąć, gdy przestanie nam być potrzebny
 
-W C++ większość z tych czynności wykonujemy w momencie otwierania pliku. Czynność ta polega na utworzeniu obiektu odpowiedniej klasy.
+W C++ większość z tych czynności wykonujemy w momencie otwierania pliku. Czynność ta polega na utworzeniu obiektu odpowiedniej klasy. Notabene, o obiektach jeszcze nic nie mówiłem. Przyjmijmy na potrzeby tej części wykładu, że obiekt to taka bardziej skomplikowana kolekcja zmiennych wraz z zestawem funkcji, które można na nich wykonywać.    
 
 #### 4.1.1 Otwieranie plików do odczytu
 
@@ -63,7 +63,7 @@ Tworzy ona obiekt o nazwie `in` związany z plikiem o nazwie zapisanej w zmienne
   if(!in) 
   ```
 
-  który jest powszechnie stosowany w celu sprawdzenia, czy plik został otwarty
+  który jest powszechnie stosowany w celu sprawdzenia, czy plik został otwarty. 
 
 - Podobnie warto zapamiętać idiom
 
@@ -79,7 +79,7 @@ Tworzy ona obiekt o nazwie `in` związany z plikiem o nazwie zapisanej w zmienne
 
 - Plików zwykle nie zamykamy ręcznie. Pliki zostaną automatycznie zamknięte z chwilą, w której sterowanie wyjdzie poza zakres zmiennej `in`. W naszym przypadku będzie to klamra kończąca funkcję `main`. Wiąże się to z tzw. destruktorami obiektów, tematem, który omówię nieco później.
 
-Użyta w powyższym programie instrukcja `throw` nie ma nic wspólnego z plikami i zostanie omówiona później. Jak można się domyślić, w kontekście powyższego kodu, kończy ona działanie programu. 
+Użyta w powyższym programie instrukcja `throw` nie ma nic wspólnego z plikami i zostanie omówiona później. Jak można się domyślić, w kontekście powyższego kodu kończy ona działanie programu. 
 
 #### 4.1.2 Otwieranie plików do zapisu
 
@@ -141,7 +141,7 @@ int main()
 
 ##### 4.1.2.1 Tryby otwarcia pliku
 
-Na koniec krótka uwaga o trybach otwierania plików. Jeżeli chcemy, by treść pliku do zapisu podczas otwierania nie była kasowana i by każda operacja wyjścia dopisywała nowe dane na końcu już istniejących, to piszemy tak:
+Na koniec krótka uwaga o trybach otwierania plików. Jeżeli chcemy, by treść pliku do zapisu podczas otwierania nie była kasowana i by każda operacja wyjścia dopisywała nowe dane na końcu już istniejących, to piszemy tak (`app` to skrót od angielskiego *append*, czyli "dołącz"):
 
 ```c++ 
 std::ofstream out("moje.log", std::ios::app);  

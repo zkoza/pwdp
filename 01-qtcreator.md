@@ -1,6 +1,6 @@
 ## QtCreator: instalacja i konfiguracja
 
-QtCreator to jedno z kilku nowoczesnych, profesjonalnych narzędzi programistycznych (obok CLion i Visual Studio Code) dostępnych dla zastosowań niekomercyjnych za darmo. Jest ono dystrybuowane wraz z biblioteką Qt - jedną z najbardziej wszechstronnych bibliotek języka C++ przeznaczonych do tworzenia aplikacji desktopowych oraz na urządzenia mobilne i wbudowane (ang. *embedded*). QtCtreator nieźle radzi też sobie z edycją programów w językach Python i JavaScript, istnieją też wtyczki wspomagające programowanie w językach Go i Rust. To, co w nim chyba jest najcenniejsze, to fakt, że działa dokładnie tak samo na różnych platformach, a więc na różnych wersjach systemu Windows, w różnych dystrybucjach systemów Linux i Unix oraz na różnych wersjach macOS. Jest dobrze zintegrowany z system budowania CMake, rozproszonymi systemami kontroli wersji (m.in. git, mercurial), z platformą clangd do automatycznego formatowania kodu źródłowego, a także z systemami automatyzacji testów (m.in. z Google Test), profilowania kodu (np. valgrind) czy statycznej analizy kodu. Oczywiście jest też ściśle zintegrowany z debugerem C++ oraz narzędziami Qt do wizualnego tworzenia aplikacji (np. Qt Designer). Ze względu na swoją objętość (związaną z oparciem się na ogromnej bibliotece Qt) i szereg funkcji pomyślanych o zastosowaniach profesjonalnych, QtCreator może budzić opory i strach wśród osób zaczynających programowanie w C++. Trochę słusznie, trochę niesłusznie. Jeśli zacznie się programować w środowiskach z łatwym "wejściem" (np. code::blocks, nieskonfigurowany Visual Studio Code, DevC++), to łatwo będzie zacząć pisanie prostych programów, natomiast pisanie czegokolwiek bardziej poważnego zacznie sprawiać ogromne trudności. QtCreator może sprawiać na samym początku problemy, których nie mamy, pisząc programy w prostym edytorze i kompilując je "z ręki" np. poleceniem g++ (Co to jest projekt i dlaczego nie mogę pracować bez niego? Czy muszę uczyć się języka skryptowego CMake? Dlaczego QtCreator nie widzi kompilatora? Gdzie są pliki wykonywalne mojego programu? Jak uruchomić mój program tak, by działał `std::cin`? Jak do mojego programu przekazać argumenty wiersza poleceń?). Odpowiedzi na te pytanie nie są jednak trudne do znalezienia, a użycie profesjonalnego środowiska programistycznego szybko przynosi efekty w postaci skrócenia czasu pisania i testowania programów. 
+QtCreator to jedno z kilku nowoczesnych, profesjonalnych narzędzi programistycznych (obok CLion i Visual Studio Code) dostępnych dla zastosowań niekomercyjnych za darmo. Jest ono dystrybuowane wraz z biblioteką Qt – jedną z najbardziej wszechstronnych bibliotek języka C++ przeznaczonych do tworzenia aplikacji desktopowych oraz na urządzenia mobilne i wbudowane (ang. *embedded*). QtCtreator nieźle radzi też sobie z edycją programów w językach Python i JavaScript, istnieją też wtyczki wspomagające programowanie w językach Go i Rust. To, co w nim chyba jest najcenniejsze, to fakt, że działa dokładnie tak samo na różnych platformach, a więc na różnych wersjach systemu Windows, w różnych dystrybucjach systemów Linux i Unix oraz na różnych wersjach macOS. Jest dobrze zintegrowany z systemem budowania CMake, rozproszonymi systemami kontroli wersji (m.in. git, mercurial), z platformą clangd do automatycznego formatowania kodu źródłowego, a także z systemami automatyzacji testów (m.in. z Google Test), profilowania kodu (np. valgrind) czy statycznej analizy kodu. Oczywiście jest też ściśle zintegrowany z debugerem C++ oraz narzędziami Qt do wizualnego tworzenia aplikacji (np. Qt Designer). Ze względu na swoją objętość (związaną z oparciem się na ogromnej bibliotece Qt) i szereg funkcji pomyślanych o zastosowaniach profesjonalnych, QtCreator może budzić opory i strach wśród osób zaczynających programowanie w C++. Trochę słusznie, trochę niesłusznie. Jeśli zacznie się programować w środowiskach z łatwym „wejściem” (np. code::blocks, nieskonfigurowany Visual Studio Code, DevC++), to łatwo będzie zacząć pisanie prostych programów, natomiast pisanie czegokolwiek bardziej poważnego zacznie sprawiać ogromne trudności. Z QtCreatorem jest odwrotnie – może sprawiać na samym początku spore problemy, których nie doświadczamy, pisząc programy w prostym edytorze i kompilując je „z ręki” np. poleceniem g++ (Co to jest projekt i dlaczego nie mogę pracować bez niego? Czy muszę uczyć się języka skryptowego CMake? Dlaczego QtCreator nie widzi kompilatora? Gdzie są pliki wykonywalne mojego programu? Jak uruchomić mój program tak, by działał `std::cin`? Jak do mojego programu przekazać argumenty wiersza poleceń?). Odpowiedzi na te pytanie nie są jednak trudne do znalezienia, a użycie profesjonalnego środowiska programistycznego szybko przynosi efekty w postaci skrócenia czasu pisania i testowania programów. 
 
 ### Instalacja
 
@@ -12,7 +12,7 @@ Standardowa instalacja programu QtCreator w systemie Linux sprowadza się do zai
 
 ![Instalator Manjaro Linux](./img/01/qtcreator-install-packages.png)
 
-Alternatywnie, nazwy pakietu wyszukujemy komendą pamac:
+Alternatywnie, nazwy pakietu wyszukujemy komendą pamac (w systemach które go obsługują, czyli dystrybucjach opartych na Arch Linux):
 
 ```bash
 > pamac search qtcreator --no-aur
@@ -21,9 +21,9 @@ Alternatywnie, nazwy pakietu wyszukujemy komendą pamac:
 co może dać następującą odpowiedź:
 
 ```txt
-qtcreator-devel  12.0.2-2										extra
+qtcreator-devel  20.0.1-2
     Lightweight, cross-platform integrated development environment (development files)
-qtcreator  12.0.2-2 [Zainstalowane] 							extra
+qtcreator  20.0.1-2 [Zainstalowane]
     Lightweight, cross-platform integrated development environment
 ```
 
@@ -32,25 +32,16 @@ Pakiet `qtcreator` instalujemy w standardowy dla danej dystrybucji sposób (np. 
 ```bash
 > pamac info qtcreator
 Nazwa                   : qtcreator
-Wersja                  : 12.0.2-2
+Wersja                  : 20.0.1-2
 Opis                    : Lightweight, cross-platform integrated development environment
 URL                     : https://www.qt.io
 Licencje                : GPL-3.0-only
-Rozmiar zainstalowanego : 120,5 MB
-Zależy od               : clang=16.0.6 
-                          clazy 
-                          gcc-libs 
-                          glibc 
-                          qt6-5compat 
-                          qt6-base 
-                          qt6-declarative 
-                          qt6-quick3d 
-                          qt6-tools 
-                          qt6-serialport 
-                          qt6-svg 
-                          qt6-webengine
-                          yaml-cpp 
-                          zstd
+Repozytorium            : extra
+Rozmiar zainstalowanego : 184,2 MB
+Grupy                   : --
+Zależy od               : clang clazy glib2 glibc libarchive libelf libgcc libstdc++ litehtml llvm-libs python qt6-base qt6-charts qt6-declarative
+                          qt6-quick3d qt6-quicktimeline qt6-tools qt6-serialport qt6-svg
+                          qt6-webengine sh yaml-cpp zstd
 Opcjonalne zależności   : qt6-doc: integrated Qt documentation [Zainstalowane]
                           qt6-examples: welcome page examples [Zainstalowane]
                           gdb: debugger [Zainstalowane]
@@ -64,13 +55,13 @@ Opcjonalne zależności   : qt6-doc: integrated Qt documentation [Zainstalowane]
                           mlocate: locator filter [Zainstalowane]
 ```
 
-Spośród zależności opcjonalnych zdecydowanie należy zainstalować debuger, przykłady i dokumentację. Niemal na pewno przyda się też integracja z systemem git, a przy pewnym poziomie zaawansowania - z programami `perf` i `valgrind`. 
+Spośród zależności opcjonalnych zdecydowanie należy zainstalować debuger, przykłady i dokumentację. Niemal na pewno przyda się też integracja z systemem git, a przy pewnym poziomie zaawansowania – z programami `perf` i `valgrind`. 
 
 #### Windows (i zapewne tak samo w macOS)
 
 Zaczynamy od pobrania i uruchomienia instalatora Qt. 
 
-Jeśli masz już zainstalowany Qt Creator i chcesz go uaktualnić, wskazane jest najpierw odinstalować starszą wersję. W tym celu w eksploratorze Windows znajdź i uruchom `Qt Maintenance Tool`, po czym wybierz  `Uninstall only`. Uwaga: tak było w 2023 roku, a jak należy postępować teraz - nie wiem. 
+Jeśli masz już zainstalowany Qt Creator i chcesz go uaktualnić, wskazane jest najpierw odinstalować starszą wersję. W tym celu w eksploratorze Windows znajdź i uruchom `Qt Maintenance Tool`, po czym wybierz  `Uninstall only`. Uwaga: tak było w 2023 roku, a jak należy postępować teraz – nie wiem. 
 
 Pobierz instalator Qt z oficjalnej strony pobierania znajdującej się pod adresem  [www.qt.io/download-qt-installer](https://www.qt.io/download-qt-installer). Witryna powinna wykryć Twój system operacyjny i automatycznie pobrać zgodny z nim program instalacyjny. Pobrany instalator będzie miał nazwę w rodzaju `qt-unified-windows-x64-4-online`. Po pobraniu uruchom go.
 
@@ -102,7 +93,7 @@ QtCreator powinien zacząć działać poprawnie tuż po instalacji, o ile instal
 
 ![qtcreator-kits-config.png](./img/01/qtcreator-kits-config.png)
 
- Jak widać, w mojej konfiguracji QtCreatora mam zdefiniowane dwa zestawy narzędzi: `Desktop` i `Qt5`. Tak naprawdę różnią się tylko tym, że `Desktop` korzysta z najnowszej wersji Qt (6.6.2), a zestaw o nazwie `Qt5` wykorzystuje bibliotekę Qt w wersji 5. W systemach Linux obecność obu tych bibliotek jest w chwili pisania tego tekstu standardem, gdyż część aplikacji korzysta z Qt6, a część z Qt5. W przypadku błędnej konfiguracji zwykle przy nazwie zestawu narzędzi pojawia się żółty trójkącik z wykrzyknikiem. Powyższe ustawienia to tylko  przykład działającej konfiguracji. Zamiast `Unix Makefiles` jako CMake generator można też wybrać `Ninja`, o ile taki wybór jest dostępny. W systemie Windows / macOS kompilator niemal na pewno będzie nazywał się inaczej (np. MingW w Windows), na pewno będziemy też widzieć inne ścieżki do programów.
+ Jak widać, w mojej konfiguracji QtCreatora mam zdefiniowane dwa zestawy narzędzi: `Desktop` i `Qt5`. Tak naprawdę różnią się tylko tym, że `Desktop` korzysta z najnowszej (w trakcie pisania tych słów) wersji Qt (6.6.2), a zestaw o nazwie `Qt5` wykorzystuje bibliotekę Qt w wersji 5. W systemach Linux obecność obu tych bibliotek jest w chwili pisania tego tekstu standardem, gdyż część aplikacji korzysta z Qt6, a część z Qt5. W przypadku błędnej konfiguracji zwykle przy nazwie zestawu narzędzi pojawia się żółty trójkącik z wykrzyknikiem. Powyższe ustawienia to tylko  przykład działającej konfiguracji. Zamiast `Unix Makefiles` jako CMake generator można też wybrać `Ninja`, o ile taki wybór jest dostępny. W systemie Windows / macOS kompilator niemal na pewno będzie nazywał się inaczej (np. MingW w Windows), na pewno będziemy też widzieć inne ścieżki do programów.
 
 Kolejna karta to `Wersje Qt`:
 
@@ -122,7 +113,7 @@ Ostatnia karta zawiera listę dostępnych debugerów i może wyglądać następu
 
 Ważne, by lista ta nie była pusta i by na pierwszej karcie (`Zestawy narzędzi`) ustawiony był jeden z nich. 
 
-Generalnie, jeśli nie jesteś zawodowcem lub choćby pół-zawodowcem i jeżeli nie potrzebujesz posługiwać się różnymi wersjami Qt lub różnymi kompilatorami, to nie definiuj więcej niż jednego zestawu narzędzi. Nie kombinuj. QtCreator ma być Twoim przyjacielem, ma po prostu działać, konfiguracja ma być funkcjonalna i "przezroczysta" - nie chcesz o niej ciągle rozmyślać. Ja mam dwie, bo studenci przysyłają mi programy w obu wersjach Qt (5 i 6). 
+Generalnie, jeśli nie jesteś zawodowcem lub choćby pół-zawodowcem i jeżeli nie potrzebujesz posługiwać się różnymi wersjami Qt lub różnymi kompilatorami, to nie definiuj więcej niż jednego zestawu narzędzi. Nie kombinuj. QtCreator ma być Twoim przyjacielem, ma po prostu działać, konfiguracja ma być funkcjonalna i „przezroczysta” – nie chcesz o niej ciągle rozmyślać. Ja mam dwie, bo studenci przysyłają mi programy w obu wersjach Qt (5 i 6). 
 
 ### Test konfiguracji
 
@@ -138,13 +129,13 @@ Uwaga! Dopóki nie będziesz korzystać z Qt, kolejne projekty rozpoczynaj od wy
 
 #### Gdzie jest moja konsola?
 
-QtCreator został zaprojektowany z myślą o programach pisanych w Qt, niekoniecznie zaś w "czystym" C++. W Qt domyślnie nie ma klasycznej konsoli. Dlatego w standardowej konfiguracji, `std::cin` nie działa. Aby go włączyć, należy poinformować QtCreator, że powinien uruchomić nasz program w terminalu. Konfiguracją uruchamiania steruje się w panelu `Projekty` (skrót klawiaturowy: ctrl-5) - por. poniższy rysunek:
+QtCreator został zaprojektowany z myślą o programach pisanych w Qt, niekoniecznie zaś w „czystym” C++. W Qt domyślnie nie ma klasycznej konsoli. Dlatego w standardowej konfiguracji, `std::cin` nie działa. Aby go włączyć, należy poinformować QtCreator, że powinien uruchomić nasz program w terminalu. Konfiguracją uruchamiania steruje się w panelu `Projekty` (skrót klawiaturowy: ctrl-5) - por. poniższy rysunek:
 
 ![qtcreato-config-run.png](./img/01/qtcreato-config-run.png)
 
 #### Gdzie jest mój plik wykonywalny? W którym katalogu będzie uruchomiony?
 
-Odpowiedzi na oba te pytania znajdują się w panelu `Projekty` - por. poprzedni punkt. Jeżeli chcemy sami zdefiniować katalog, w którym ma być umieszczany plik wykonywalny i wszystkie inne pliki generowane przez kompilator, powinniśmy kliknąć opcję `Budowanie` w sekcji `Budowanie i uruchamianie`:
+Odpowiedzi na oba te pytania znajdują się w panelu `Projekty` – por. poprzedni punkt. Jeżeli chcemy sami zdefiniować katalog, w którym ma być umieszczany plik wykonywalny i wszystkie inne pliki generowane przez kompilator, powinniśmy kliknąć opcję `Budowanie` w sekcji `Budowanie i uruchamianie`:
 
 ![qtcreator-config-build.png](./img/01/qtcreator-config-build.png)
 
@@ -170,20 +161,20 @@ Panel w lewym dolnym rogu okna QtCreatora zawiera tajemniczy przycisk z ikonką 
 
 Przycisk ten służy konfiguracji całego panelu, czyli konkretnego znaczenia pozostałych trzech przycisków:
 
--   ![qtcreator-run-icon.png](./img/01/qtcreator-run-icon.png) - przycisk kompilacji i uruchamiania programu w bieżącej konfiguracji
--   ![qtcreator-debug-icon.png](./img/01/qtcreator-debug-icon.png) - przycisk kompilacji i uruchamiania programu w debugerze dla bieżącej konfiguracji
--   ![qtcreator-build-icon.png](./img/01/qtcreator-build-icon.png) - przycisk kompilacji ("budowania") programu w bieżącej konfiguracji
+-   ![qtcreator-run-icon.png](./img/01/qtcreator-run-icon.png) – przycisk kompilacji i uruchamiania programu w bieżącej konfiguracji
+-   ![qtcreator-debug-icon.png](./img/01/qtcreator-debug-icon.png) – przycisk kompilacji i uruchamiania programu w debugerze dla bieżącej konfiguracji
+-   ![qtcreator-build-icon.png](./img/01/qtcreator-build-icon.png) – przycisk kompilacji ("budowania") programu w bieżącej konfiguracji
 
 Po jego przyciśnięciu pojawi się menu, które może wyglądać następująco:
 
 ![qtcreator-build-selection-menu.png](./img/01/qtcreator-build-selection-menu.png)
 
-Qt Creator potrafi obsługiwać kilka projektów naraz. Tu mam zrzut ekranu w sytuacji, gdy miałem załadowany własny projekt (`transfer_matrix_p3`) i jednocześnie projekt studencki (`lista3` ).  Każdy z nich może być kompilowany innym zestawem narzędzi (tu akurat używałem tylko jednego zestawu, `Desktop`). W ramach jednego zestawu narzędzi możliwe jest używanie kilku zestawów flag kompilatora. Z kolei każdy projekt może prowadzić do utworzenia kilku "targetów", czyli plików wykonywalnych lub bibliotek (tu mamy trzy pliki wykonywalne: `zad1`, `zad2` i `zad3`). 
+Qt Creator potrafi obsługiwać kilka projektów naraz. Tu mam zrzut ekranu w sytuacji, gdy miałem załadowany własny projekt (`transfer_matrix_p3`) i jednocześnie projekt studencki (`lista3` ).  Każdy z nich może być kompilowany innym zestawem narzędzi (tu akurat używałem tylko jednego zestawu, `Desktop`). W ramach jednego zestawu narzędzi możliwe jest używanie kilku zestawów flag kompilatora. Z kolei każdy projekt może prowadzić do utworzenia kilku „targetów”, czyli plików wykonywalnych lub bibliotek (tu mamy trzy pliki wykonywalne: `zad1`, `zad2` i `zad3`). 
 
-Kolumna "Budowanie" w powyższym menu kontekstowym zasługuje na szczególną uwagę, gdyż występujące w niej pozycje pojawiają się w wielu oknach konfiguracji QtCreatora i jest to też jeden z najczęściej dokonywanych przez użytkownika wyborów konfiguracji budowania programu. 
+Kolumna „Budowanie” w powyższym menu kontekstowym zasługuje na szczególną uwagę, gdyż występujące w niej pozycje pojawiają się w wielu oknach konfiguracji QtCreatora i jest to też jeden z najczęściej dokonywanych przez użytkownika wyborów konfiguracji budowania programu. 
 
 - `Debug` ("Debugowa") - Ten tryb kompilacji wybieramy, jeżeli chcemy móc stosunkowo łatwo uzyskiwać informacje o ewentualnych błędach w programie. Kompilacja w tym trybie umożliwia bezproblemowe uruchamianie programu pod kontrolą debugera. Może też włączyć autodiagnostykę programu wykonywaną w czasie jego wykonywania (o ile program został napisany w odpowiedni sposób). **Jest to domyślny tryb kompilacji**. Nie używaj innego, jeżeli nie masz ku temu dobrego powodu. 
-- `Release` ("Release'owa") - Tryb kompilacji nastawiony na możliwie jak największą  szybkość uzyskiwanego programu wykonywalnego. Słowo "Release" oznacza tu "wydanie" (kolejnej wersji produktu). Jest to kompilacja, którą można udostępnić klientowi. Klient nie będzie chciał debugować kupionego przez siebie programu, za to będzie zadowolony, jeżeli ten program będzie zajmował mało miejsca i działał szybko. Programy kompilowane w trybie Release mogą działać nawet ponad 10 razy szybciej od kompilowanych w trybie Debug. 
+- `Release` („Release'owa”) - Tryb kompilacji nastawiony na możliwie jak największą  szybkość uzyskiwanego programu wykonywalnego. Słowo „Release” oznacza tu „wydanie” (kolejnej wersji produktu). Jest to kompilacja, którą można udostępnić klientowi. Klient nie będzie chciał debugować kupionego przez siebie programu, za to będzie zadowolony, jeżeli ten program będzie zajmował mało miejsca i działał szybko. Programy kompilowane w trybie *Release* mogą działać ponad 10 razy szybciej od kompilowanych w trybie *Debug*. 
 
 Powyższe dwa tryby są powszechnie używane w zintegrowanych środowiskach programistycznych (np. w Code::blocks czy Visual Studio Code). QtCreator obsługuje też kilka innych trybów kompilacji (np. `RelWIthDebInfo`, `MinSizeRel`). Nie używaj ich, dopóki nie oswoisz się z systemem CMake.
 
