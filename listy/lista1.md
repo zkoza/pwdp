@@ -1,6 +1,6 @@
 ### Lista zadań nr 1
 
-**To nie jest lista na ocenę**. Ta lista to raczej "checklista" umiejętności podstawowych, które należy zdobyć, zanim zacznie się pisać programy w C++. W razie napotkania trudności można więc, a nawet wypada, pytać się koleżanek, kolegów, osoby prowadzące ćwiczenia, wykładowcę, internety i inne wiarygodne źródła informacji (z rezerwą odnosiłbym się do Sztucznego, gdyż Sztuczny jakiego znam to przede wszystkim model językowy, a skoro kłamstwo to podstawowy element języka, więc wszystko, co podpowie Sztuczny, wymaga gruntownej weryfikacji). Poniżej, dla zwięzłości poleceń zakładam, że student posługuje się własnym laptopem, jednak wszystkie polecenia można równie dobrze wykonać na komputerach dostępnych w uczelnianych pracowniach komputerowych. Nie trzeba wykonywać wszystkich poleceń - wystarczy skupić się na tych, których nie jesteśmy pewni. W końcu to jest tylko checklista! **Listę można też wykonać wspólnie w grupie**, jednak później każdy powinien być w stanie potwierdzić posiadanie wszystkich poniższych umiejętności, żeby potem zajęcia szły w miarę bezproblemowo.  
+**To nie jest lista na ocenę**. Ta lista to raczej „checklista” umiejętności podstawowych, które należy zdobyć, zanim zacznie się pisać programy w C++. W razie napotkania trudności można więc, a nawet wypada, pytać się koleżanek, kolegów, osoby prowadzące ćwiczenia, wykładowcę, internety i inne wiarygodne źródła informacj. Poniżej, dla zwięzłości poleceń zakładam, że student posługuje się własnym laptopem, jednak wszystkie polecenia można równie dobrze wykonać na komputerach dostępnych w uczelnianych pracowniach komputerowych. Nie trzeba wykonywać wszystkich poleceń – wystarczy skupić się na tych, których nie jesteśmy pewni. W końcu to jest tylko checklista! **Listę można też wykonać wspólnie w grupie**, jednak później każdy powinien być w stanie potwierdzić posiadanie wszystkich poniższych umiejętności, żeby potem zajęcia szły w miarę bezproblemowo.  
 
 1. Zapoznał(a/e)m się z materiałami do pierwszego wykładu. 
 
@@ -44,7 +44,7 @@
     }
     ```
 
-11. Potrafię uruchomić poniższy program ([pobierz pliki](../cpp/w01/checklista11)) pod kontrolą debugera. 
+11. Potrafię uruchomić poniższy program ([pobierz pliki](../cpp/w01/checklista11)) pod kontrolą debuggera. 
 
     ```c++
     #include <cmath>
@@ -74,16 +74,21 @@
 
     - Potrafię definiować punkty przerwań debuggera (ang. ***break points***) i debugować program, poruszając się od jednego punktu przerwań do kolejnego.    
 
-    - Rozumiem, czym podczas debugowania "***step into***" różni się od "***step over***".
+    - Rozumiem, czym podczas debugowania „***step into***„ różni się od „***step over***”.
 
     - Wiem, jak w moim IDE wyświetlić podczas debugowania tzw. *backtrace* i z grubsza rozumiem, jakie informacje zawiera i jak się w nim poruszać.
       
-    - Wiem, że aby komfortowo korzystać z debugera, muszę program skompilować w odpowiednim trybie i że domyślnie ten tryb w większości IDE nazywa się "*Debug*" (lub podobnie, np. "Debugowa").
+    - Wiem, że aby komfortowo korzystać z debuggera, muszę program skompilować w odpowiednim trybie i że domyślnie ten tryb w większości IDE nazywa się „Debug” (lub podobnie, np. „Debugowa”).
     
-12. Mam jako takie pojęcie, co to jest "projekt" w kontekście pracy z IDE. 
+12. Mam jako takie pojęcie, co to jest projekt w kontekście pracy z IDE. 
 
     - Z grubsza wiem, do czego służą pliki `CMakeLists.txt`
-    - Potrafię otowtzyć w moim IDE plik `CMakeLists.txt` definiujący bieżący projekt i dokonywać w nim prostych edycji
-    - W szczególności potrafię w dowolnym projekcie ustawić wymaganą wersję języka na C++17, C++20 lub C++23.
+    
+    - Potrafię otworzyć w moim IDE plik `CMakeLists.txt` definiujący bieżący projekt i dokonywać w nim prostych edycji
 
+    - W szczególności potrafię w dowolnym projekcie ustawić wymaganą wersję języka na C++17, C++20 lub C++23.
+    
+    - Potrafię skompilować wczytany w ten sposób program i go uruchomić – w tym pod kontrolą debuggera. 
+    
+      
     

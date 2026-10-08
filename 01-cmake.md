@@ -2,27 +2,27 @@
 
 #### 1. Projekty
 
-Języka C++ nie stworzono z myślą o niewielkich programach, które zmieszczą się w jednym pliku. Poza programami szkolnymi i studenckimi, programy w C++ z reguły składają się z kilku, kilkunastu, kilkuset, a nawet tysięcy plików źródłowych. Projekty to sposób radzenia sobie z tą złożonością przez programistów i/lub zintegrowane środowiska programistyczne. Projekty zawierają informacje o tym, z jakich plików składa się program lub zestaw programów, z jakich bibliotek korzystają, jak mają być one kompilowane, gdzie i pod jakimi nazwami mają zostać zapisane wyniki kompilacji, gdzie kompilator ma przechowywać pliki pośrednie kompilacji itp. Niestety, nie ma tu żadnych standardów. Microsoft Visual Studio Code ma swój domyślny format projektów, świat Linuksa ma swoje (np. `Makefile`), poszczególne IDE mają swoje (np. `Code::Blocks` czy `CodeLite`), istnieją także rozwiązania uniwersalne. Należy do nich zdobywający bardzo dużą popularność system **CMake**.
+Języka C++ nie stworzono z myślą o niewielkich programach, które zmieszczą się w jednym pliku. Poza programami szkolnymi i studenckimi, programy w C++ z reguły składają się z kilku, kilkunastu, kilkuset, a nawet tysięcy plików źródłowych. Projekty to sposób radzenia sobie z tą złożonością przez programistów i/lub zintegrowane środowiska programistyczne. Projekty zawierają informacje o tym, z jakich plików składa się program lub zestaw programów, z jakich bibliotek korzysta, jak mają być one kompilowane, gdzie i pod jakimi nazwami mają zostać zapisane wyniki kompilacji, gdzie kompilator ma przechowywać pliki pośrednie kompilacji itp. Niestety, nie ma tu żadnych standardów. Microsoft Visual Studio Code ma swój domyślny format projektów, świat Linuksa ma swoje (np. `Makefile`), poszczególne IDE mają swoje (np. `Code::Blocks` czy `CodeLite`), istnieją także rozwiązania uniwersalne. Należy do nich zdobywający bardzo dużą popularność system **CMake**.
 
 Początkujący programiści C++ boją się projektów. To błąd. Jeżeli jakieś zintegrowane środowisko programistyczne potrafi działać nawet bez projektów (podobno Dev-C++ tak potrafi), to z reguły wiąże się to z wyłączeniem większości udogodnień oferowanych przez współczesne IDE, a więc możliwości debugowania kodu czy też korzystania z autouzupełniania czy dynamicznej analizy kodu podczas jego pisania. Bez projektów środowiska programistyczne są w stanie dostrzec co najwyżej jeden plik. Nie tak działa C++.
 
 #### Do czego służy CMake?
 
-Jedną z najbardziej pożądanych cech oprogramowania jest jego [przenośność](https://pl.wikipedia.org/wiki/Przeno%C5%9Bno%C5%9B%C4%87_oprogramowania), czyli możliwość używania tego samego programu na różnych platformach sprzętowych (np. smartfony i komputery klasy PC), w różnych systemach operacyjnych (np. FreeBSD, Linux i Windows) oraz w różnych wersjach tego samego systemu (np. Windows 7 i Windows 11). Jeżeli programy napisane w C++ trzymają się standardu, to są przenośne. Gorzej jest z całym środowiskiem programistycznym, jaki towarzyszy tworzeniu, testowaniu i utrzymaniu kodu - każdy system ma zwykle własne popularne kompilatory, debugery, profilery, generatory dokumentacji i inne oprogramowanie używane przez twórców programów. A nawet jeśli są to te same narzędzia, to przecież niemal na pewno używa ich się nieco inaczej w różnych systemach operacyjnych. Stąd potrzeba uniwersalnego, przenośnego systemu definiowania sposobu kompilacji programów w C++, która stała się szczególnie nagląca wraz z upowszechnieniem się pracy zdalnej, którą często wykonuje się na własnym sprzęcie, na którym zainstalowano swój ulubiony system operacyjny, kompilator, debuger, edytor tekstu i inne narzędzia programistyczne. Jednym z najpopularniejszych takich systemów jest obecnie (rok 2025) system [CMake](https://pl.wikipedia.org/wiki/CMake). System ten, w największym skrócie, zarządza właśnie opisanymi powyżej projektami. Jego największą zaletą jest uniwersalność - te same skrypty wejściowe działaja i robią to samo, choć nie tak samo, w każdym współczesnym systemie operacyjnym i na każdej platformie sprzętowej wspieranej przez CMake.  
+Jedną z najbardziej pożądanych cech oprogramowania jest jego [przenośność](https://pl.wikipedia.org/wiki/Przeno%C5%9Bno%C5%9B%C4%87_oprogramowania), czyli możliwość używania tego samego programu na różnych platformach sprzętowych (np. smartfony i komputery klasy PC), w różnych systemach operacyjnych (np. FreeBSD, Linux i Windows) oraz w różnych wersjach tego samego systemu (np. Windows 7 i Windows 11). Jeżeli programy napisane w C++ trzymają się standardu, to są przenośne. Gorzej jest z całym środowiskiem programistycznym, jaki towarzyszy tworzeniu, testowaniu i utrzymaniu kodu – każdy system ma zwykle własne popularne kompilatory, debugery, profilery, generatory dokumentacji i inne oprogramowanie używane przez twórców programów. A nawet jeśli są to te same narzędzia, to przecież niemal na pewno używa ich się nieco inaczej w różnych systemach operacyjnych. Stąd potrzeba uniwersalnego, przenośnego systemu definiowania sposobu kompilacji programów w C++, która stała się szczególnie nagląca wraz z upowszechnieniem się pracy zdalnej, którą często wykonuje się na własnym sprzęcie, na którym zainstalowano swój ulubiony system operacyjny, kompilator, debuger, edytor tekstu i inne narzędzia programistyczne. Jednym z najpopularniejszych takich systemów jest obecnie (rok 2026) system [CMake](https://pl.wikipedia.org/wiki/CMake). System ten, w największym skrócie, zarządza właśnie opisanymi powyżej projektami. Jego największą zaletą jest uniwersalność – te same skrypty wejściowe działaja i robią to samo, choć nie tak samo, w każdym współczesnym systemie operacyjnym i na każdej platformie sprzętowej wspieranej przez CMake.  
 
 #### 3. Najprostszy skrypt programu CMake
 
 Idea CMake jest prosta: programista tworzy skrypt w języku CMake, w którym opisuje, z czego składa się jego projekt  i jak każdy z jego komponentów zależy od innych (np. bibliotek). Najprostszy przykład takiego skryptu wygląda następująco:
 
  ```cmake
- cmake_minimum_required (VERSION 3.10)
+ cmake_minimum_required (VERSION 3.16)
  project(simple)
  add_executable(simple main.cpp)
  ```
 
 W każdym skrypcie CMake potrzebujemy:
 
-- Definicji minimalnej wersji języka CMake, której obsługa jest niezbędna do przetworzenia danego skryptu. Wersja 3.10 jest "bezpieczna" -  wersja `cmake` aktualna w chwili pisania tych słów to 3.31, więc obsługa 3.10 jest powszechna. Mógłbym zamiast `3.10` napisać  powyżej `3.31`, ale co, jeśli ten program chciałbym kiedyś uruchomić w komputerze ze starszą wersją cmake?  
+- Definicji minimalnej wersji języka CMake, której obsługa jest niezbędna do przetworzenia danego skryptu. Wersja 3.16 jest „bezpieczna” –  wersja `cmake` aktualna w chwili pisania tych słów to 4.4.4, więc obsługa 3.16 jest powszechna. Mógłbym zamiast `3.16` napisać  powyżej `4.4.`, ale co, jeśli ten program chciałbym kiedyś uruchomić w komputerze ze starszą wersją cmake? Uwaga: Cmake zmienia się szybko. Obecnie (koniec 2016 r.) ostatnią wersją wspieraną jest CMake 3.05. 
 - Nazwy projektu
 - Definicji choć jednego celu (ang. *target*) kompilacji. W naszym przypadku celem kompilacji jest wygenerowanie pliku wykonywalnego `simple` na podstawie pliku źródłowego `main.cpp`, a informuje o tym komenda `add_executable`.
 
@@ -32,7 +32,7 @@ Skrypt systemu CMake *zawsze* zapisujemy w pliku o nazwie `CMakeLists.txt`. Nast
  > cmake -B build .
  ```
 
-W powyższym poleceniu `cmake` to nazwa programu, `-B` to jego opcja opisana w dokumentacji jako "Explicitly specify a build directory", `build` to nazwa katalogu roboczego, a `.` to lokalizacja katalogu z plikiem `CMakeLists.txt`, przy czym pojedyncza kropka jest synonimem katalogu bieżącego. 
+W powyższym poleceniu `cmake` to nazwa programu, `-B` to jego opcja opisana w dokumentacji jako „Explicitly specify a build directory”, `build` to nazwa katalogu roboczego, a `.` to lokalizacja katalogu z plikiem `CMakeLists.txt`, przy czym pojedyncza kropka jest synonimem katalogu bieżącego. 
 
 Po wykonaniu powyższej komendy `cmake` wyświetli szereg komunikatów, które mogą wyglądać tak:
 
@@ -71,12 +71,12 @@ Jeżeli wszystko przebiegło prawidłowo, to nie musimy tego czytać. Widzimy, �
 
 Jak widać, `cmake` utworzył, zgodnie z naszym życzeniem, katalog `build` i umieścił w nim kilka plików (np. `Makefile` i `CMakeCache.txt`)  oraz cały katalog ` CMakeFiles`, który będzie jego katalogiem roboczym. 
 
-- Plik `CmakeCache.txt` tworzony jest automatycznie przez cmake przy pierwszej próbie wygenerowania plików służących do kompilacji programu. O ile `CMakeLists.txt` jest wspólny dla wszystkich programistów pracujących w zespole, to wszystko, co znajduje się w katalogu budowania, jest "prywatne". Dotyczy to też pliku `CMakeCache.txt`. Plik ten przechowuje lokalną konfigurację projektu, która może różnić się od konfiguracji współdzielonej przez wszystkich programistów. 
+- Plik `CmakeCache.txt` tworzony jest automatycznie przez cmake przy pierwszej próbie wygenerowania plików służących do kompilacji programu. O ile `CMakeLists.txt` jest wspólny dla wszystkich programistów pracujących w zespole, to wszystko, co znajduje się w katalogu budowania, jest „prywatne”. Dotyczy to też pliku `CMakeCache.txt`. Plik ten przechowuje lokalną konfigurację projektu, która może różnić się od konfiguracji współdzielonej przez wszystkich programistów i ją w pewnym sensie nadpisywać. 
 - Plik `Makefile` to skrypt dla programu `make` używanego w systemach typu UNIX do budowania projektów (projekt to jeden lub więcej plików źródłowych, które wymagają kompilacji).
 - Plik `cmake_install.cmake` to [skrypt instalacyjny twojego projektu wygenerowany przez cmake](https://stackoverflow.com/questions/25669919/what-is-cmake-install-cmake). Nigdy go nie używałem.  
 - Katalog `CMakeFiles` to katalog roboczy programu cmake dla twojego projektu. Nie ma potrzeby tam zaglądać.  
 
-W kolejnym kroku kompilujemy nasz program. Można to zrobić w sposób niezależny od platformy - tak samo w każdej wersji Linuksa, Windows, FreeBSD czy Mac OS. Służy do tego komenda `cmake --build [katalog budowania projektu]`:
+W kolejnym kroku kompilujemy nasz program. Można to zrobić w sposób niezależny od platformy – tak samo w każdej wersji Linuksa, Windows, FreeBSD czy Mac OS. Służy do tego komenda `cmake --build [katalog budowania projektu]`:
 
 ```bash 
 > cmake --build build
@@ -99,9 +99,9 @@ project(simple)
 add_executable(simple main.cpp)
  ```
 
-Nazwa "celu" (ang. *target*) jest tu pierwszym argumentem polecenia `add_executable`. W naszym przypadku jest to `simple`. 
+Nazwa „celu” (ang. *target*) jest tu pierwszym argumentem polecenia `add_executable`. W naszym przypadku jest to `simple`. 
 
-Spójrzmy jeszcze na zawartość naszego katalogu z projektem (bez wgłębiania się głębiej niż na 2 poziomy):
+Spójrzmy na aktualną zawartość naszego katalogu z projektem (bez wgłębiania się głębiej niż na 2 poziomy):
 
 ```txt
 > tree -L 2 -F
@@ -168,18 +168,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(simple main.cpp)
 ```
 
-Powyżej dodałem jeszcze żądanie, że program musi byc kompilowany w standardzie C++20. Jeżeli `cmake` nie znajdzie w naszym systemie kompilatora obsługującego ten standard, to nie wygeneruje plików budowania, a zamiast tego wyświetli komunikat o błędzie.
+Powyżej dodałem jeszcze żądanie, że program *musi* byc kompilowany w standardzie C++20. Jeżeli `cmake` nie znajdzie w naszym systemie kompilatora obsługującego ten standard, to nie wygeneruje plików budowania, a zamiast tego wyświetli komunikat o błędzie.
 
-Dostępne wersje standardu C++ to m.in. `98`, `11`, `17`, `20` i `23`.  Wszystkie wiodące kompilatory w pełni obsługują standard 17 i wcześniejsze, natomiast standardy `20` i późniejsze zwykle obsługiwane są tylko częściowo. Oczywiście za rok czy dwa może się to zmienić.    
+Dostępne wersje standardu C++ to m.in. `98`, `11`, `17`, `20` i `23`.  Wszystkie wiodące kompilatory w pełni obsługują standard 17 i wcześniejsze, natomiast standardy `20` i późniejsze zwykle obsługiwane są (w 2026 roku) tylko częściowo. Oczywiście za rok czy dwa może się to zmienić.    
 
 Uwaga: mało kto pamięta polecenia CMake albo czy standard języka ustawia się  specjalną komendą języka, czy może poprzez wartość jakiejś zmiennej ustawianej poleceniem `set`. Najczęściej te polecenia kopiuje się ze swojego poprzedniego projektu lub z internetu. 
 
-#### 5. Skrypt dla projektu z kilkoma plikami wykonywalnymi - idealny do list zadań
+#### 5. Skrypt dla projektu z kilkoma plikami wykonywalnymi – idealny do list zadań
 
-Skrypt `CMakeLists.txt` w typowym scenariuszu akademickim - lista zadań z trzema zadaniam, z których zadanie 3. rozbite jest na podpunkty a i b, wyglądać może nastepująco: 
+Skrypt `CMakeLists.txt` w typowym scenariuszu akademickim – lista zadań z trzema zadaniami, z których zadanie 3. rozbite jest na podpunkty a i b, wyglądać może następująco: 
 
 ```cmake
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16)
 project(lista1)
 set(CMAKE_CXX_STANDARD 17)
 
@@ -198,7 +198,7 @@ Jak widać, `cmake` wygeneruje aż 4 pliki wykonywalne:
 
 Warto przy okazji zauważyć, że separatorem kolejnych członów poleceń systemu `cmake` jest nie przecinek, a spacja. 
 
-#### 6. Skrypt dla projektu z kilkoma plikami wykonywalnymi i biblioteką - idealny do późniejszych list zadań
+#### 6. Skrypt dla projektu z kilkoma plikami wykonywalnymi i biblioteką – idealny do późniejszych list zadań
 
 Programy w języku C++ rzadko pisane są wyłącznie w oparciu o standard języka i bibliotekę standardową. Zwykle używamy także zewnętrznych bibliotek. Powiedzmy, że chcemy w naszym programie użyć biblioteki [fmt](https://github.com/fmtlib/fmt). Proszę bardzo:
 
@@ -225,11 +225,11 @@ Sprawa jest prosta: CLion ma doskonałą dokumentację która szczegółowo opis
 
 ##### 5.2. CMake w QtCreator
 
-Po uruchomieniu programu QtCreator pracę nad nowym projektem rozpoczynamy od jego utworzenia. W tym celu w oknie powitalnym (podświetlona ikonka "Start" ![](./img/01/qtcreator-start-maly.png) w kolumnie po lewej) wybieramy opcję "Utwórz projekt", po czym w oknie dialogowym wybieramy "Projekt nieużywający Qt" oraz "Czysta aplikacja C++":
+Po uruchomieniu programu QtCreator pracę nad nowym projektem rozpoczynamy od jego utworzenia. W tym celu w oknie powitalnym (podświetlona ikonka „Start” ![](./img/01/qtcreator-start-maly.png) w kolumnie po lewej) wybieramy opcję „Utwórz projekt”, po czym w oknie dialogowym wybieramy „Projekt nieużywający Qt” oraz „Czysta aplikacja C++”:
 
 ![](./img/01/qtcreator-welcome-new-project.png) 
 
-W kolejnych oknach dialogowych wybieramy katalog, w którym zostanie utworzony katalog główny projektu, a także jego nazwę; system budowania (oczywiście wybieramy CMake); zestaw narzędzi (tu wystarczy zaznaczyć tylko "Debug" i "Release"); system kontroli wersji (jeśli nie wiesz, o co chodzi, zostaw tę opcję pustą). To wszystko. Po przyciśnięciu przycisku "zakończ" program wygeneruje standardowy, minimalny plik `CmakeLists.txt` oraz plik `main.cpp` z minimalnym programem w C++:
+W kolejnych oknach dialogowych wybieramy katalog, w którym zostanie utworzony katalog główny projektu, a także jego nazwę; system budowania (oczywiście wybieramy CMake); zestaw narzędzi (tu wystarczy zaznaczyć tylko „Debug” i, być może, „Release”); system kontroli wersji (jeśli nie wiesz, o co chodzi, zostaw tę opcję pustą). To wszystko. Po przyciśnięciu przycisku „zakończ” program wygeneruje standardowy, minimalny plik `CmakeLists.txt` oraz plik `main.cpp` z minimalnym programem w C++:
 
 ![](./img/01/qtcreator-hello-world.png)
 
@@ -237,9 +237,9 @@ Standardowy (dla programu QtCtreator) minimalny plik `CMakeLists.txt` sprawia wr
 
 ![](./img/01/qtcreator-first-cmakelist-txt.png)
 
-W rzeczywistości dwie ostatnie instrukcje (`include` i `install`) można usunąć - i wtedy uzyskamy minimalny plik `CMaleLists.txt` przedstawiony powyżej. 
+W rzeczywistości dwie ostatnie instrukcje (`include` i `install`) można usunąć – i wtedy uzyskamy minimalny plik `CMaleLists.txt` przedstawiony powyżej. 
 
-Przy każdym następnym użyciu klikamy oczywiście przycisk "Otwórz projekt", po czym w oknie dialogowym wybieramy plik `CMakeLists.txt` naszego projektu. 
+Przy każdym następnym użyciu klikamy oczywiście przycisk „Otwórz projekt”, po czym w oknie dialogowym wybieramy plik `CMakeLists.txt` naszego projektu. 
 
 
 

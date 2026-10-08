@@ -2,6 +2,12 @@
 
 ## Spis treści
 
+### 0. Git
+
+- [git](./000-git.md)
+
+  
+
 ### 1. Preliminaria
 
 - [Wstęp](./00-wstep.md)
@@ -9,7 +15,7 @@
 - [Narzędzia](./01-narzedzia.md)
   - [Instalacja i konfiguracja programu QtCreator](./01-qtcreator.md)
   - [Wprowadzenie do systemu CMake](./01-cmake.md)
-  - [Debuger](./01-debugger.md)
+  - [Debugger](./01-debugger.md)
 - [Lista zadań nr 1](./listy/lista1.md)
 
 ### 2. Operacje wejścia-wyjścia; typy arytmetyczne i `std::string`
