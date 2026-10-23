@@ -5,7 +5,7 @@ int main()
 {
     bool visible_shape = true;
     sf::RenderWindow window(sf::VideoMode(sf::Vector2u(800, 600)), L"Moje okno z kółkiem");
-    sf::CircleShape shape(400.0f);
+    sf::CircleShape shape(198.7, 60);
     shape.setFillColor(sf::Color::Red);
     while (window.isOpen())
     {
