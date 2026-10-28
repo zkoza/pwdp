@@ -105,7 +105,7 @@ int main()
 }
 ```
 
-To dość dziwny program, w którym wszystkie zmienne mają tę samą nazwę, `x`. Czy jednak jest to ta sama zmienna? Nie! Gdyż każda przechowywana jest w innym miejscu pamięci operacyjnej i ma swoją wartość!:
+To dość dziwny program, w którym wszystkie zmienne mają tę samą nazwę, `x`. Czy jednak jest to ta sama zmienna? Nie! Gdyż każda przechowywana jest w innym miejscu pamięci operacyjnej i ma swoją unikatową wartość!:
 
 ```txt 
 &x = 0x404028, x = 1
@@ -154,4 +154,4 @@ int main()
   std::cout << X::x + Y::x << "\n";
   ```
 
-W praktyce jeszcze długo nie będziesz tworzyć własnych przestrzeni nazw ani używać bibliotek z tej cechy języka C++ korzystających. Niemniej, rozumiesz już mniej więcej, skąd się bierze i co oznacza `std::` zapisywane przy funkcjach, zmiennych i obiektach biblioteki standardowej C++.
+W praktyce jeszcze długo nie będziesz tworzyć własnych przestrzeni nazw ani używać bibliotek (innych niż biblioteka standardowa) z tej cechy języka C++ korzystających. Niemniej, rozumiesz już mniej więcej, skąd się bierze i co oznacza `std::` zapisywane przy funkcjach, zmiennych i obiektach biblioteki standardowej C++.
