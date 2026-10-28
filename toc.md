@@ -4,15 +4,12 @@
 
 ### 0. Git
 
-- 1. [Wstęp, podstawowe pojęcia, instalacja](./000a-wstep.md)
-
-- 2. [Repozytorium](./000b-repozytorium.md)
-  3. [Podstawy pracy z repozytorium lokalnym](./000c-praca-z-repo-lokalnym.md)
-  4. 
-  
-- [git](./000-git.md)
-
-  
+- [Wstęp, podstawowe pojęcia, instalacja](./000a-wstep.md)
+- [Repozytorium](./000b-repozytorium.md)
+- [Praca z repozytorium lokalnym](./000c-praca-z-repo-lokalnym.md)
+- [Praca z repozytorium zdalnym](./000c-praca-z-repo-zdalnym.md)
+- [Git a praca w zespole](./000c-praca-w-zespole.md)
+- Podsumowanie
 
 ### 1. Preliminaria
 

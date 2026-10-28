@@ -45,19 +45,82 @@ Kilka przykładów ich zastosowania na repozytorium, które w tej chwili czytasz
 
   ![](./img/00/git-config-list.png)
 
-  Ta opcja pozwala zorientować się w aktualnej konfiguracji repozytorium. Na powyższym zrzucie ekranu najważniejsze są informacje na końcu tej listy: repozytorium połączone jest z serwisem GitHub (a nie np. Codeberg).  
+  Ta opcja pozwala zorientować się w aktualnej konfiguracji repozytorium. Na powyższym zrzucie ekranu najważniejsze są informacje na końcu tej listy: repozytorium połączone jest z serwisem GitHub (a nie np. Codeberg).
 
-### 3.3. Komendy modyfikujące repozytorium
+- `git branch` – ta komenda wyświetla wszystkie gałęzie repozytorium, gałąź bieżącą wyróżniając gwiazdką w pierwszej kolumnie oraz zielonym kolorem: 
 
-Większość komend modyfikujących repozytorium dotyczy modyfikacji indeksu, czyli pliku, w którym zapisywana jest kolejna migawka. Najczęściej wykorzystywanym poleceniem z tej grupy jest `git add`. Przypuśćmy, że chcemy przygotować do utrwalenia w postaci migawki zmiany w pliku, który czytasz. W tym celu wydajemy polecenie
+  ![](./img/00/git-branch.png)
+
+### 3.3. Komendy modyfikujące indeks
+
+Najczęściej wykorzystywanym poleceniem z grupy poleceń modyfikujących indeks jest `git add`. 
+
+### 3.3.1. `git add`
+
+Przypuśćmy, że chcemy przygotować do utrwalenia w postaci migawki zmiany w pliku, który czytasz. W tym celu wydajemy polecenie
 
 ```txt
-git add 000c-praca-z-repo-lokalnym.md
+> git add 000c-praca-z-repo-lokalnym.md
 ```
 
-Dodaje ono do indeksu plik `000c-praca-z-repo-lokalnym.md` w jego bieżącym stanie. Jedną komendą można dodać do indeksu kilka plików naraz, np.:
+Dodaje ono do indeksu plik `000c-praca-z-repo-lokalnym.md` w jego bieżącym stanie. Jedną komendą można dodać do indeksu kilka plików naraz, np. poniższa komenda dodaje do indeksu 4 pliki:
+
+```   txt
+> git add 000c-praca-z-repo-lokalnym.md 000a-wstep.md 000b-repozytorium.md 000-git.md
+```
+
+**UWAGA!!!** 
+
+Do repozytorium dodajemy wyłącznie niezbędne pliki z kodem programu i ewentualnie inne, bez których programu nie da się skompilować lub uruchomić. Mogą to więc być pliki z grafikami, dźwiękami, czcionkami itp. Nie dodajemy do indeksu (i repozytorium) plików pośrednich kompilacji ani plików wykonywalnych.   
+
+### 3.3.2. `git mv`
+
+Polecenie `git mv` służy do zmiany nazwy pliku lub katalogu (lub do przeniesienia pliku do innego katalogu). Wymaga ono dwóch argumentów: nazwy pliku źródłowego i nazwy docelowej, np. polecenie 
+
+```txt 
+git mv plik.txt plik.cpp
+```
+
+zamieniłoby nazwę pliku `plik.txt` na `plik.cpp`.
+
+### 3.3.3. `git rm`
+
+Polecenie `git rm` służy do usuwania pliku – zarówno z kolejnej migawki, jak i katalogu roboczego. Oczywiście nie można go usunąć z tych migawek, w których został utrwalony. Przykład:
+
+```txt
+git rm program.exe
+```
+
+### 3.4. Komendy modyfikujące repozytorium
+
+W zasadzie (o ile mi wiadomo) istnieje tylko jedna taka komenda: `git commit`. Powoduje ona utworzenie migawki na podstawie aktualnej zawartości indeksu. Zwykle towarzyszy jej opcja `-m` służąca do dodania do tworzonej właśnie migawki krótkiej informacji ją opisującej. 
+
+```bash  
+git commit -m"Opis git-a"
+[main 102c5ec] Opis git-a
+ 5 files changed, 287 insertions(+), 33 deletions(-)
+ create mode 100644 000a-wstep.md
+ create mode 100644 000b-repozytorium.md
+ create mode 100644 000c-praca-z-repo-lokalnym.md
+```
+
+Jak widać, w przypadku tego konkretnego polecenia `git commit`, git utworzył nową migawkę o identyfikatorze zaczynającym się od ciągu liter szesnastkowych `102c5ec` na gałęzi `main`. W wyniku tej operacji, zmienianie uległo 5 plików, z czego 3 to pliki dotąd niewystępujące w repozytorium. 
+
+Sprawdźmy historię zmian za pomocą polecenia `git log` (obrazek przedstawia 3 najnowsze wpisy):
+
+![](./img/00/git-log-po-commit.png)  
+
+Faktycznie, klucz SHA-1 najnowszej migawka rozpoczyna się od znaków `102c5ec`, a migawka ta opatrzona jest komentarzem „Opis git-a”.
+
+Warto zwrócić uwagę na to, że wskaźnik `HEAD` przesunął się automatycznie do najnowszej migawki na bieżącej gałęzi, którą jest `main`.  Jednocześnie analogiczne wskaźniki dla zdalnego serwera, `origin/main` i `origin/HEAD`, pozostały w dotychczasowym miejscu. Taka sytuacja występuje wtedy, gdy od czasu ostatniej synchronizacji z serwerem utworzyliśmy jakieś migawki lokalne. Stany lokalnego i zdalnego serwera są różne. Musimy jakoś poinformować zdalny serwer o dokonanej właśnie zmianie repozytorium polegającej na utworzeniu nowej migawki (lub całej serii migawek, być może na różnych gałęziach).
+
+​    
+
+
 
    
+
+ 
 
  
 
