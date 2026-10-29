@@ -1,4 +1,4 @@
-# Git jest git
+# Git
 
 ## 5. Git a praca w zespole
 
@@ -16,11 +16,28 @@ Przypuśćmy, że będąc w pracy, zmieniłem w tym pliku którego zawartość w
 
 ![](./img/00/git-push-failed.png)
 
-Git komunikuje, że nie może wykonać operacji `git push`, gdyż zdalne repozytorium zawiera zmiany, których nie ma w repozytorium lokalnym. Sugeruje też, by wykonać `git pull` a dopiero później `git push`.    Próbujemy:
+Git komunikuje, że nie może wykonać operacji `git push`, gdyż zdalne repozytorium zawiera zmiany, których nie ma w repozytorium lokalnym. Sugeruje też, by wykonać `git pull` a dopiero później `git push`.    Próbujemy. Po chwili otwiera się domyślny (dla git) edytor, a w nim komunikat
 
+```txt 
+Merge branch 'main' of github.com:zkoza/pwdp
+# Podaj komunikat zapisu, żeby wyjaśnić, dlaczego to scalenie jest konieczne,
+# zwłaszcza jeśli scala zaktualizowaną gałąź nadrzędną z gałęzią tematyczną.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+```
 
+Oznacza on, że git przystępuje do automatycznego włączania zmian z repozytorium zdalnego do repozytorium lokalnego. Migawka, którą w tym celu utworzy, będzie typu „merge” (po polsku: „scalanie”). Taka migawka ma 2 przodków. W edytorze mamy przygotowany domyślny dla scalania komunikat „Merge branch 'main' of github.com:zkoza/pwdp” – cała reszta zostanie podczas scalania odrzucona. Możemy wstrzymać scalanie, kasując ten komunikat. Tym razem postanawiamy jednak dokończyć scalanie – w tym celu po prostu zapisujemy plik w bieżącej postaci. Git wyświetli nowy komunikat:
 
-Ciąg dalszy nastąpi…. 
+![](/home/zkoza/Pulpit/Dydaktyka/aaa_pwdp/github/pwdp/img/00/git-pull-prosty-ok.png)
+
+Oznacza on, że scalanie zakończyło się pomyślnie. Widzimy też, że zmiany objęły w pliki. W jednym dodano 18 wierszy i usunięto 3, w drugim dodano 1 wiersz i usunięto też 1 (liczba plusików i minusików jest proporcjonalna do liczby dodanych i usuniętych wierszy w każdym pliku). To wszystko. Zsynchronizowaliśmy zmiany uwidocznione w serwerze zdalnym z lokalnymi, tworząc nową migawkę. Możemy ją wepchnąć na serwer poleceniem `git push`. Aby teraz zobaczyć zmiany w repozytorium zdalnym za pomocą przeglądarki, zwykle należy odświeżyć jej widok.   
+
+#### 5.1.2. Konflikty rozwiązywane ręcznie
+
+W powyższym przykładzie zmiany na serwerze dotyczyły różnych miejsc tego samego pliku. Takie zmiany łatwo „rozwiązać” automatycznie. Prawdziwy problem („wyścig”) pojawia się, gdy zmiany dotykają tych samych wierszy naszych plików. Spróbujmy dokonać ponownej edycji pierwszego wiersza bieżącego pliku, na serwerze i lokalnie, za każdym razem inaczej zmieniając jego treść.     
+
+ 
 
  
 
