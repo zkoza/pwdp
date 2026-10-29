@@ -1,4 +1,4 @@
-# Git
+# Git jest git
 
 ## 5. Git a praca w zespole
 
