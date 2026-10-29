@@ -1,4 +1,4 @@
-# Git
+# Git jest git
 
 ## 4. Praca z repozytorium zdalnym (podstawy)
 
